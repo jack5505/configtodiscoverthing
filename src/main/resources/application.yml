@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT:8123}
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: ${SPRING_PROFILE:dev}
+  cloud:
+    config:
+      allow-override: true
+      override-none: true
+      override-system-properties: false
+      server:
+        git:
+          clone-on-start: true
+          basedir: ${user.home}/git
+          uri: https://gitlab.com/startup_team1/configuration
+          
