@@ -14,5 +14,18 @@ spring:
         git:
           clone-on-start: true
           basedir: ${user.home}/git
-          uri: https://gitlab.com/startup_team1/configuration
-          
+          username: config-server
+          password: glpat-XZDuCDGk9rzyqPNs4zWk
+          uri: https://gitlab.com/startup_team1/configuration.git
+          skip-ssl-validation: true
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
